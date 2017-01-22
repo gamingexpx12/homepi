@@ -17,7 +17,7 @@ time.sleep(1)
 while True:
     try:
         t, hum = dht(dhtsensor, 0)
-        out = "It's {:2}C degrees and {:3.f} percent humidity".format(t,hum)
+        out = "It's {:2}C degrees and {:3.0f} percent humidity".format(t,hum)
         time.sleep(0.1)
         if t == prevt and hum == prevhum:
             print("No changes: {} {}, {} {} ".format(t,prevt,hum,prevhum))
