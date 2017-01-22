@@ -20,7 +20,7 @@ while True:
         out = "Det er {:2.0f} grader inne".format(t)
         time.sleep(0.1)
         if t == prevt:
-            print("No changes: {} {}, {} {} ".format(t,prevt,hum,prevhum))
+            print("No changes: {} {}".format(t,prevt))
             pass
         else:
             setText(out)
