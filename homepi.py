@@ -12,7 +12,7 @@ out = ""
 time.sleep(1)
 while True:
     try:
-        t, hum = dht(dhtsensor, 1)
+        t, hum = dht(dhtsensor, 0)
         out = "It's {}*C degrees and {} percent humidity".format(t,hum)
         print(out)
         time.sleep(1)
