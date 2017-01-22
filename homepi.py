@@ -17,7 +17,7 @@ while True:
         t, hum = dht(dhtsensor, 0)
         out = "It's {}*C degrees and {} percent humidity".format(t,hum)
         time.sleep(0.1)
-        setText() = out
+        setText(out)
         setRGB(0,128,64)
         print(out)
         time.sleep(1)
