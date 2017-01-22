@@ -23,5 +23,7 @@ while True:
         time.sleep(1)
     except KeyboardInterrupt:
         break
+        setText("")
+        setRGB(0,0,0)
     except IOError:
         print "Error"
