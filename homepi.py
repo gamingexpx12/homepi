@@ -10,6 +10,8 @@ dhtsensor = 7 # DI pin with PWM
 
 pinMode(dhtsensor, "input")
 out = ""
+prevt = 0
+prevhum = 0
 # Main
 time.sleep(1)
 while True:
@@ -17,9 +19,15 @@ while True:
         t, hum = dht(dhtsensor, 0)
         out = "It's {}*C degrees and {} percent humidity".format(t,hum)
         time.sleep(0.1)
-        setText(out)
-        setRGB(0,128,64)
-        print(out)
+        if t == prevt and hum == prevhum:
+            print("no changes detected \n {} {}, {} {} ".format(t,prevt,hum,prevhum))
+            pass
+        else:
+            setText(out)
+            setRGB(0,128,64)
+            print(out)
+        prevt = t
+        prevhum = hum
         time.sleep(1)
     except KeyboardInterrupt:
         break
